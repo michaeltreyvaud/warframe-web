@@ -9,21 +9,35 @@ const Styles = {
     left: '0px',
     height: '100%',
     backgroundColor: 'white',
-    width: '80px',
+    width: '220px',
     overflowY: 'auto',
   },
   contents: {
 
   },
-  item: {
+  navItem: {
     textDecoration: 'none',
+    padding: '12px 24px',
+    color: '#515253',
+    letterSpacing: '.025em',
+    fontWeight: 'normal',
+    cursor: 'pointer',
+  },
+  ul: {
+    marginTop: '0px',
+    marginBottom: 0,
+    paddingLeft: 0,
+    listStyle: 'none',
+  },
+  li: {
+    fontSize: '14px',
   },
 };
 
 const Item = ({ item }) => (
-  <div>
-    <Link to={item.link} style={Styles.item}>{item.title}</Link>
-  </div>
+  <li style={Styles.li}>
+    <Link to={item.link} style={Styles.navItem}>{item.title}</Link>
+  </li>
 );
 
 Item.propTypes = {
@@ -32,9 +46,11 @@ Item.propTypes = {
 
 const Aside = ({ options }) => (
   <aside style={Styles.aside}>
-    <div style={Styles.contents}>
-      {options && options.map(option => <Item item={option} key={option.key} />)}
-    </div>
+    <nav style={Styles.contents}>
+      <ul style={Styles.ul}>
+        {options && options.map(option => <Item item={option} key={option.key} />)}
+      </ul>
+    </nav>
   </aside>
 );
 
