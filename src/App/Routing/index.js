@@ -4,10 +4,12 @@ import Signup from '../Routes/Auth/signup';
 
 const testing = () => <h1>Home Page</h1>;
 const AppRouter = () => (
-  <Switch>
-    <Route exact path="/" component={testing} />
-    <Route exact path="/auth/signup" component={Signup} />
-  </Switch>
+  <div>
+    <Switch>
+      <Route exact path="/" component={testing} />
+      <Route exact path="/auth/signup" component={Signup} />
+    </Switch>
+  </div>
 );
 
 export default AppRouter;
