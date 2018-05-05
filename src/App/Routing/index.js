@@ -9,43 +9,37 @@ import Login from '../Routes/Auth/login';
 const testing = () => <h1>Home Page</h1>;
 
 const asideOptions = [{
-  key: '1',
-  Dashboard: {
-    title: 'Dashboard',
-    hasSubsections: true,
-    link: '/dashboard',
-    items: [{
-      viewSchedule: {
-        title: 'View Schedule',
-        hasSubsections: false,
-        link: '/schedule',
-      },
-    }],
-  },
+  key: 'parent1',
+  title: 'Dashboard',
+  hasSubsections: true,
+  link: '/dashboard',
+  items: [{
+    key: 'DashboardChild1',
+    title: 'View Schedule',
+    hasSubsections: false,
+    link: '/schedule',
+  }],
 }, {
-  key: '2',
-  Administration: {
-    title: 'Administration',
-    hasSubsections: true,
-    link: '/admin',
-    items: [{
-      applications: {
-        title: 'Applications',
-        hasSubsections: false,
-        link: '/applications',
-      },
-      penTests: {
-        title: 'Penetration Tests',
-        hasSubsections: false,
-        link: '/pentests',
-      },
-      findingCategories: {
-        title: 'Findings Categories',
-        hasSubsections: false,
-        link: '/categories',
-      },
-    }],
-  },
+  key: 'parent2',
+  title: 'Administration',
+  hasSubsections: true,
+  link: '/admin',
+  items: [{
+    key: 'AdministrationChild1',
+    title: 'Applications',
+    hasSubsections: false,
+    link: '/applications',
+  }, {
+    key: 'AdministrationChild2',
+    title: 'Penetration Tests',
+    hasSubsections: false,
+    link: '/pentests',
+  }, {
+    key: 'AdministrationChild3',
+    title: 'Findings Categories',
+    hasSubsections: false,
+    link: '/categories',
+  }],
 }];
 
 const AppRouter = () => (

@@ -20,19 +20,11 @@ const Styles = {
   },
 };
 
-const Item = ({ item }) => {
-  const details = {};
-  Object.keys(item).map((key) => {
-    details.title = item[key].title;
-    details.link = item[key].link;
-    return true;
-  });
-  return (
-    <div>
-      <Link to={details.link} style={Styles.item}>{details.title}</Link>
-    </div>
-  );
-};
+const Item = ({ item }) => (
+  <div>
+    <Link to={item.link} style={Styles.item}>{item.title}</Link>
+  </div>
+);
 
 Item.propTypes = {
   item: PropTypes.object.isRequired,
