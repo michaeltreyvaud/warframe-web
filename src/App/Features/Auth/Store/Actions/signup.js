@@ -37,9 +37,6 @@ export const signup = body => (dispatch) => {
   };
   return fetch(url, options)
     .then(res => res.json())
-    .then((json) => {
-      console.log('json', json);
-      return dispatch(success(json));
-    })
+    .then(json => dispatch(success(json)))
     .catch(() => dispatch(fail()));
 };

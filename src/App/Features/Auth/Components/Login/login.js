@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import Panel from '../../../../Common/Panel';
 
 const Styles = {
@@ -27,6 +28,12 @@ class Login extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.attempt === true && nextProps.attempt === false &&
+    this.props.token === '' && nextProps.token !== '' && nextProps.token.length > 0) {
+      this.props.history.push('/');
+    }
+  }
   onChange(e) {
     const { name, value } = e.target;
     this.props.setValue(name, value);
@@ -38,7 +45,6 @@ class Login extends Component {
       password: this.props.password,
       grant_type: 'password',
     };
-    console.log('Body : ', body);
     this.props.login(body);
   }
   render() {
@@ -57,8 +63,13 @@ class Login extends Component {
 Login.propTypes = {
   username: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
+  attempt: PropTypes.bool.isRequired,
+  token: PropTypes.string.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
   setValue: PropTypes.func.isRequired,
   login: PropTypes.func.isRequired,
 };
 
-export default Login;
+export default withRouter(Login);

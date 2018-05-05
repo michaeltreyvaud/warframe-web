@@ -14,7 +14,6 @@ import signupReducer, { signupInitialState } from './signup';
 import loginReducer, { loginInitialState } from './login';
 
 const initialState = {
-  token: null,
   login: { ...loginInitialState },
   signup: { ...signupInitialState },
 };
