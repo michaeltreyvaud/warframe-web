@@ -13,14 +13,33 @@ export const setValue = (name, value) => ({
   },
 });
 
-export const attempt = () => ({
+const attempt = () => ({
   type: ATTEMPT_SIGNUP,
 });
 
-export const success = () => ({
+const success = () => ({
   type: SIGNUP_SUCCESS,
 });
 
-export const fail = () => ({
+const fail = () => ({
   type: SIGNUP_FAIL,
 });
+
+export const signup = body => (dispatch) => {
+  dispatch(attempt());
+  const url = `${process.env.REACT_APP_ROOT_URL}${process.env.REACT_APP_SIGNUP_LINK}`;
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  };
+  return fetch(url, options)
+    .then(res => res.json())
+    .then((json) => {
+      console.log('json', json);
+      return dispatch(success(json));
+    })
+    .catch(() => dispatch(fail()));
+};

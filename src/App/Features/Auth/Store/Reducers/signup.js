@@ -6,6 +6,9 @@ import {
 } from '../ActionTypes/signup';
 
 export const signupInitialState = {
+  attempt: false,
+  error: false,
+  errorMessage: '',
 };
 
 const signupReducer = (state = signupInitialState, action) => {
@@ -13,22 +16,29 @@ const signupReducer = (state = signupInitialState, action) => {
     case ATTEMPT_SIGNUP: {
       return {
         ...state,
+        attempt: true,
+        error: false,
+        errorMessage: '',
       };
     }
     case SIGNUP_SUCCESS: {
       return {
         ...state,
+        attempt: false,
+        error: false,
+        errorMessage: '',
       };
     }
     case SIGNUP_FAIL: {
       return {
         ...state,
+        attempt: false,
+        error: true,
+        errorMessage: 'An error occured, please try again',
       };
     }
     case SET_VALUE: {
-      console.log('yoyoyo');
       const { name, value } = action.payload;
-      console.log(name, value);
       return {
         ...state,
         [name]: value,
