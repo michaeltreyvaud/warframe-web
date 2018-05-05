@@ -6,7 +6,6 @@ import {
 } from '../ActionTypes/login';
 
 export const loginInitialState = {
-  token: '',
   attempt: false,
   error: false,
   errorMessage: '',
@@ -23,10 +22,8 @@ const loginReducer = (state = loginInitialState, action) => {
       };
     }
     case LOGIN_SUCCESS: {
-      const { token } = action.payload;
       return {
         ...state,
-        token,
         attempt: false,
         error: false,
         errorMessage: '',
