@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Styles = {
   container: {
@@ -16,12 +17,18 @@ const Styles = {
     fontFamily: '"Source Sans Pro", sans-serif',
     color: '#FFFFFF',
   },
+  link: {
+    textDecoration: 'none',
+    color: 'white',
+  },
 };
 
 const Navbar = () => (
   <header style={Styles.container}>
     <div style={Styles.header}>
-      <span>Warframe</span>
+      <Link to="/" style={Styles.link}>
+        Warframe
+      </Link>
     </div>
   </header>
 );
