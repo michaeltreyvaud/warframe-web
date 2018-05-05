@@ -1,0 +1,57 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+const Styles = {
+  aside: {
+    position: 'fixed',
+    top: '55px',
+    left: '0px',
+    height: '100%',
+    backgroundColor: 'white',
+    width: '80px',
+    overflowY: 'auto',
+  },
+  contents: {
+
+  },
+  item: {
+    textDecoration: 'none',
+  },
+};
+
+const Item = ({ item }) => {
+  const details = {};
+  Object.keys(item).map((key) => {
+    details.title = item[key].title;
+    details.link = item[key].link;
+    return true;
+  });
+  return (
+    <div>
+      <Link to={details.link} style={Styles.item}>{details.title}</Link>
+    </div>
+  );
+};
+
+Item.propTypes = {
+  item: PropTypes.object.isRequired,
+};
+
+const Aside = ({ options }) => (
+  <aside style={Styles.aside}>
+    <div style={Styles.contents}>
+      {options && options.map(option => <Item item={option} key={option.key} />)}
+    </div>
+  </aside>
+);
+
+Aside.propTypes = {
+  options: PropTypes.array,
+};
+
+Aside.defaultProps = {
+  options: [],
+};
+
+export default Aside;
