@@ -3,6 +3,10 @@ import {
   CREATE_JOB_SUCCESS,
   CREATE_JOB_FAIL,
   CREATE_JOB_SET_VALUE,
+
+  GET_JOBS_ATTEMPT,
+  GET_JOBS_SUCCESS,
+  GET_JOBS_FAIL,
 } from '../ActionTypes/jobs';
 import {
   CREATE_APPLICATION_ATTEMPT,
@@ -47,6 +51,24 @@ const adminReducer = (state = initialState, action) => {
       };
     }
     case CREATE_JOB_SET_VALUE: {
+      return {
+        ...state,
+        jobs: jobsReducer(state.jobs, action),
+      };
+    }
+    case GET_JOBS_ATTEMPT: {
+      return {
+        ...state,
+        jobs: jobsReducer(state.jobs, action),
+      };
+    }
+    case GET_JOBS_SUCCESS: {
+      return {
+        ...state,
+        jobs: jobsReducer(state.jobs, action),
+      };
+    }
+    case GET_JOBS_FAIL: {
       return {
         ...state,
         jobs: jobsReducer(state.jobs, action),

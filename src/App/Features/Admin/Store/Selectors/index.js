@@ -1,5 +1,6 @@
 //  Jobs
-export const getCreateLineOfBusiness = state => state.admin.jobs.lineOfBusiness || '';
+export const getCreateLineOfBusiness = state => state.admin.jobs.create.lineOfBusiness || '';
+export const getJobs = state => state.admin.jobs.index.jobs || [];
 
 //  applications
 export const getCreateApplicationName = state => state.admin.applications.applicationName || '';

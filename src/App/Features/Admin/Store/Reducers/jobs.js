@@ -3,12 +3,24 @@ import {
   CREATE_JOB_SUCCESS,
   CREATE_JOB_FAIL,
   CREATE_JOB_SET_VALUE,
+
+  GET_JOBS_ATTEMPT,
+  GET_JOBS_SUCCESS,
+  GET_JOBS_FAIL,
 } from '../ActionTypes/jobs';
 
 export const jobsInitialState = {
-  attempt: false,
-  error: false,
-  errorMessage: '',
+  index: {
+    attempt: false,
+    error: false,
+    errorMessage: '',
+    jobs: [],
+  },
+  create: {
+    attempt: false,
+    error: false,
+    errorMessage: '',
+  },
 };
 
 const jobsReducer = (state = jobsInitialState, action) => {
@@ -16,32 +28,79 @@ const jobsReducer = (state = jobsInitialState, action) => {
     case CREATE_JOB_ATTEMPT: {
       return {
         ...state,
-        attempt: true,
-        error: false,
-        errorMessage: '',
+        create: {
+          ...state.create,
+          attempt: true,
+          error: false,
+          errorMessage: '',
+        },
       };
     }
     case CREATE_JOB_SUCCESS: {
       return {
         ...state,
-        attempt: false,
-        error: false,
-        errorMessage: '',
+        create: {
+          ...state.create,
+          attempt: false,
+          error: false,
+          errorMessage: '',
+        },
       };
     }
     case CREATE_JOB_FAIL: {
       return {
         ...state,
-        attempt: false,
-        error: true,
-        errorMessage: 'An error occured, please try again',
+        create: {
+          ...state.create,
+          attempt: false,
+          error: true,
+          errorMessage: 'An error occured, please try again',
+        },
       };
     }
     case CREATE_JOB_SET_VALUE: {
       const { name, value } = action.payload;
       return {
         ...state,
-        [name]: value,
+        create: {
+          ...state.create,
+          [name]: value,
+        },
+      };
+    }
+    case GET_JOBS_ATTEMPT: {
+      return {
+        ...state,
+        index: {
+          ...state.index,
+          attempt: true,
+          error: false,
+          errorMessage: '',
+        },
+      };
+    }
+    case GET_JOBS_SUCCESS: {
+      const { jobs } = action.payload;
+      return {
+        ...state,
+        index: {
+          ...state.index,
+          jobs,
+          attempt: false,
+          error: false,
+          errorMessage: '',
+        },
+      };
+    }
+    case GET_JOBS_FAIL: {
+      return {
+        ...state,
+        index: {
+          ...state.index,
+          attempt: false,
+          error: true,
+          errorMessage: 'An error occured, please try again',
+        },
       };
     }
     default: {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Panel from '../../../../Common/Panel';
+import Panel from '../../../../../Common/Panel';
 
 const Styles = {
   form: {
@@ -30,7 +30,7 @@ const Styles = {
   },
 };
 
-class Jobs extends Component {
+class CreateJob extends Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
@@ -59,10 +59,10 @@ class Jobs extends Component {
   }
 }
 
-Jobs.propTypes = {
+CreateJob.propTypes = {
   lineOfBusiness: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
   create: PropTypes.func.isRequired,
 };
 
-export default Jobs;
+export default CreateJob;

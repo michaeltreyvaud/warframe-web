@@ -1,5 +1,7 @@
 import React from 'react';
-import Jobs from '../../Features/Admin/Components/Jobs';
+import { Switch, Route } from 'react-router-dom';
+import IndexJob from '../../Features/Admin/Components/Jobs/Index';
+import CreateJob from '../../Features/Admin/Components/Jobs/Create';
 
 const Styles = {
   content: {
@@ -7,10 +9,22 @@ const Styles = {
   },
 };
 
-const JobsRoute = () => (
+const IndexRoute = () => (
   <section style={Styles.content}>
-    <Jobs />
+    <IndexJob />
   </section>
 );
 
-export default JobsRoute;
+const CreateJobRoute = () => (
+  <section style={Styles.content}>
+    <CreateJob />
+  </section>
+);
+
+const Routing = () => (
+  <Switch>
+    <Route exact path="/admin/jobs" component={IndexRoute} />
+    <Route exact path="/admin/jobs/create" component={CreateJobRoute} />
+  </Switch>
+);
+export default Routing;

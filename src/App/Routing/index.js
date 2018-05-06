@@ -61,6 +61,7 @@ const AppRouter = () => (
         <Route exact path="/auth/signup" component={Signup} />
         <Route exact path="/auth/login" component={Login} />
         <Route exact path="/admin/jobs" component={Jobs} />
+        <Route exact path="/admin/jobs/create" component={Jobs} />
         <Route exact path="/admin/applications" component={Applications} />
         <Route exact path="/admin/categories" component={Categories} />
         <Route default component={NoMatch} />
