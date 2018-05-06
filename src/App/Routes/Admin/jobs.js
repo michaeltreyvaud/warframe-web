@@ -1,15 +1,15 @@
 import React from 'react';
-import Login from '../../Features/Auth/Components/Login';
+import Jobs from '../../Features/Admin/Components/Jobs';
 
 const Styles = {
   content: {
-    width: '50%',
+    width: '100%',
   },
 };
 
 const LoginRoute = () => (
   <section style={Styles.content}>
-    <Login />
+    <Jobs />
   </section>
 );
 

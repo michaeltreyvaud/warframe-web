@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Panel from '../../../../Common/Panel';
 
 const Styles = {
@@ -19,6 +19,23 @@ const Styles = {
     borderRadius: '4px',
     marginBottom: '10px',
     padding: '6px 16px',
+  },
+  loginButton: {
+    borderRadius: '3px',
+    fontSize: '13px',
+    borderColor: 'transparent',
+    outline: 'none',
+    color: 'white',
+    backgroundColor: '#5899eb',
+    height: '35px',
+  },
+  p: {
+    paddingTop: '15px',
+    textAlign: 'center',
+    margin: '0 0 10.5px',
+    color: '#656565',
+    fontSize: '14px',
+    lineHeight: 1.52857,
   },
 };
 
@@ -49,12 +66,18 @@ class Login extends Component {
   }
   render() {
     return (
-      <Panel title="Login to your Warframe Account" >
+      <Panel title="Warframe Login" >
         <form style={Styles.form} onSubmit={this.onSubmit}>
           <input style={Styles.input} type="email" name="username" placeholder="Username" autoComplete="email" onChange={this.onChange} />
           <input style={Styles.input} type="password" name="password" placeholder="Password" autoComplete="password" onChange={this.onChange} />
-          <input style={Styles.input} type="submit" value="Login" />
+          <input style={Styles.loginButton} type="submit" value="Login" />
         </form>
+        <div>
+          <p style={Styles.p}>Dont have an account?</p>
+          <Link to="/auth/signup">
+            <button style={Styles.loginButton} >Signup</button>
+          </Link>
+        </div>
       </Panel>
     );
   }

@@ -44,7 +44,7 @@ class Signup extends Component {
   }
   render() {
     return (
-      <Panel title="Register your Warframe Account" >
+      <Panel title="Warframe Account Registration" >
         <form style={Styles.form} onSubmit={this.onSubmit}>
           <input style={Styles.input} type="email" name="email" placeholder="Email" autoComplete="email" onChange={this.onChange} />
           <input style={Styles.input} type="text" name="firstName" placeholder="First Name" autoComplete="given-name" onChange={this.onChange} />

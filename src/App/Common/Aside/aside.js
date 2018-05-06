@@ -16,12 +16,14 @@ const Styles = {
 
   },
   navItem: {
-    textDecoration: 'none',
     padding: '12px 24px',
-    color: '#515253',
-    letterSpacing: '.025em',
-    fontWeight: 'normal',
-    cursor: 'pointer',
+    link: {
+      textDecoration: 'none',
+      color: '#515253',
+      letterSpacing: '.025em',
+      fontWeight: 'normal',
+      wordWrap: 'break-word',
+    },
   },
   ul: {
     marginTop: '0px',
@@ -36,7 +38,11 @@ const Styles = {
 
 const Item = ({ item }) => (
   <li style={Styles.li}>
-    <Link to={item.link} style={Styles.navItem}>{item.title}</Link>
+    <div style={Styles.navItem}>
+      <Link to={item.link} style={Styles.navItem.link}>{item.title}</Link>
+      {item.hasSubsections && item.items && item.items.length > 0 &&
+        item.items.map(option => <Item item={option} key={option.key} />)}
+    </div>
   </li>
 );
 

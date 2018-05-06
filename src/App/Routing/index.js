@@ -5,8 +5,10 @@ import Content from '../Common/Content';
 import Aside from '../Common/Aside';
 import Signup from '../Routes/Auth/signup';
 import Login from '../Routes/Auth/login';
+import Jobs from '../Routes/Admin/jobs';
+import NoMatch from '../Routes/NoMatch';
 
-const testing = () => <h1>Home Page</h1>;
+const Home = () => <h1>Home Page</h1>;
 
 const asideOptions = [{
   key: 'parent1',
@@ -31,11 +33,16 @@ const asideOptions = [{
     link: '/applications',
   }, {
     key: 'AdministrationChild2',
+    title: 'Jobs',
+    hasSubsections: false,
+    link: 'admin/jobs',
+  }, {
+    key: 'AdministrationChild3',
     title: 'Penetration Tests',
     hasSubsections: false,
     link: '/pentests',
   }, {
-    key: 'AdministrationChild3',
+    key: 'AdministrationChild4',
     title: 'Findings Categories',
     hasSubsections: false,
     link: '/categories',
@@ -46,11 +53,13 @@ const AppRouter = () => (
   <div>
     <Navbar />
     <Aside options={asideOptions} />
-    <Content>
+    <Content containsAside>
       <Switch>
-        <Route exact path="/" component={testing} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/auth/signup" component={Signup} />
         <Route exact path="/auth/login" component={Login} />
+        <Route exact path="/admin/jobs" component={Jobs} />
+        <Route default component={NoMatch} />
       </Switch>
     </Content>
   </div>
