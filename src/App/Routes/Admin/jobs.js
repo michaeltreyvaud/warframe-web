@@ -7,10 +7,10 @@ const Styles = {
   },
 };
 
-const LoginRoute = () => (
+const JobsRoute = () => (
   <section style={Styles.content}>
     <Jobs />
   </section>
 );
 
-export default LoginRoute;
+export default JobsRoute;

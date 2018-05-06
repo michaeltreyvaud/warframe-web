@@ -6,6 +6,7 @@ import Aside from '../Common/Aside';
 import Signup from '../Routes/Auth/signup';
 import Login from '../Routes/Auth/login';
 import Jobs from '../Routes/Admin/jobs';
+import Applications from '../Routes/Admin/applications';
 import NoMatch from '../Routes/NoMatch';
 
 const Home = () => <h1>Home Page</h1>;
@@ -30,12 +31,12 @@ const asideOptions = [{
     key: 'AdministrationChild1',
     title: 'Applications',
     hasSubsections: false,
-    link: '/applications',
+    link: '/admin/applications',
   }, {
     key: 'AdministrationChild2',
     title: 'Jobs',
     hasSubsections: false,
-    link: 'admin/jobs',
+    link: '/admin/jobs',
   }, {
     key: 'AdministrationChild3',
     title: 'Penetration Tests',
@@ -59,6 +60,7 @@ const AppRouter = () => (
         <Route exact path="/auth/signup" component={Signup} />
         <Route exact path="/auth/login" component={Login} />
         <Route exact path="/admin/jobs" component={Jobs} />
+        <Route exact path="/admin/applications" component={Applications} />
         <Route default component={NoMatch} />
       </Switch>
     </Content>

@@ -30,7 +30,7 @@ const Styles = {
   },
 };
 
-class Jobs extends Component {
+class Applications extends Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
@@ -43,15 +43,15 @@ class Jobs extends Component {
   onSubmit(e) {
     e.preventDefault();
     const body = {
-      lineOfBusiness: this.props.lineOfBusiness,
+      applicationName: this.props.applicationName,
     };
     this.props.create(body);
   }
   render() {
     return (
-      <Panel title="Create Job" >
+      <Panel title="Create Application" >
         <form style={Styles.form} onSubmit={this.onSubmit}>
-          <input style={Styles.input} type="text" name="lineOfBusiness" placeholder="Line of Business" autoComplete="off" onChange={this.onChange} />
+          <input style={Styles.input} type="text" name="applicationName" placeholder="Application Name" autoComplete="off" onChange={this.onChange} />
           <input style={Styles.createButton} type="submit" value="Create" />
         </form>
       </Panel>
@@ -59,10 +59,10 @@ class Jobs extends Component {
   }
 }
 
-Jobs.propTypes = {
-  lineOfBusiness: PropTypes.string.isRequired,
+Applications.propTypes = {
+  applicationName: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
   create: PropTypes.func.isRequired,
 };
 
-export default Jobs;
+export default Applications;
