@@ -36,8 +36,14 @@ const asideOptions = [{
   }, {
     key: 'AdministrationChild2',
     title: 'Jobs',
-    hasSubsections: false,
+    hasSubsections: true,
     link: '/admin/jobs',
+    items: [{
+      key: 'JobsChild1',
+      title: 'Create',
+      hasSubsections: false,
+      link: '/admin/jobs/create',
+    }],
   }, {
     key: 'AdministrationChild3',
     title: 'Penetration Tests',
