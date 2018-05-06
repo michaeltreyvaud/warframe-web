@@ -64,7 +64,7 @@ class Jobs extends Component {
           </thead>
           <tbody>
             {jobs && jobs.map(job => (
-              <tr style={Styles.tr}>
+              <tr style={Styles.tr} key={`${job.id}::${job.lineOfBusiness}`}>
                 <td style={Styles.td}>{job.id}</td>
                 <td style={Styles.td}>{job.lineOfBusiness}</td>
               </tr>))}
