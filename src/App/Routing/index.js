@@ -7,6 +7,7 @@ import Signup from '../Routes/Auth/signup';
 import Login from '../Routes/Auth/login';
 import Jobs from '../Routes/Admin/jobs';
 import Applications from '../Routes/Admin/applications';
+import Categories from '../Routes/Admin/categories';
 import NoMatch from '../Routes/NoMatch';
 
 const Home = () => <h1>Home Page</h1>;
@@ -46,7 +47,7 @@ const asideOptions = [{
     key: 'AdministrationChild4',
     title: 'Findings Categories',
     hasSubsections: false,
-    link: '/categories',
+    link: '/admin/categories',
   }],
 }];
 
@@ -61,6 +62,7 @@ const AppRouter = () => (
         <Route exact path="/auth/login" component={Login} />
         <Route exact path="/admin/jobs" component={Jobs} />
         <Route exact path="/admin/applications" component={Applications} />
+        <Route exact path="/admin/categories" component={Categories} />
         <Route default component={NoMatch} />
       </Switch>
     </Content>
