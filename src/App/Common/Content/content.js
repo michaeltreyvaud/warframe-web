@@ -1,25 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-const Styles = left => ({
-  main: {
-    position: 'fixed',
-    top: '55px',
-    overflow: 'auto',
-    maxHeight: '100%',
-    bottom: '0px',
-    right: '0px',
-    left: (left) ? '220px' : '0px',
-    display: 'flex',
-    flex: 1,
-    justifyContent: 'center',
-  },
-});
+import './content.css';
 
 const Content = ({ children, containsAside }) => {
-  const Style = Styles(containsAside).main;
+  const className = (containsAside) ? 'content-aside' : 'content-no-aside';
   return (
-    <section style={Style}>
+    <section className={className}>
       {children}
     </section>
   );

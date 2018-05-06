@@ -1,0 +1,33 @@
+.aside {
+  position: fixed;
+  top: 55px;
+  left: 0px;
+  height: 100%;
+  background-color: white;
+  width: 220px;
+  overflow-y: auto;
+}
+
+.aside ul {
+  margin-top: 0px;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.aside-nav-item {
+  padding: 12px 24px;
+}
+
+
+.aside-nav-item-link {
+  text-decoration: none;
+  color: #515253;
+  letter-spacing: .025em;
+  font-weight: normal;
+  word-wrap: break-word;
+}
+
+.aside-nav-item-link:hover {
+  color: #23b7e5;
+}

@@ -1,0 +1,25 @@
+.content-aside {
+  position: fixed;
+  top: 55px;
+  overflow-y: auto;
+  max-height: 100%;
+  bottom: 0px;
+  right: 0px;
+  left: 220px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.content-no-aside {
+  position: fixed;
+  top: 55px;
+  overflow-y: auto;
+  max-height: 100%;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}

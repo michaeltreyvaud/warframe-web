@@ -1,45 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
-const Styles = {
-  aside: {
-    position: 'fixed',
-    top: '55px',
-    left: '0px',
-    height: '100%',
-    backgroundColor: 'white',
-    width: '220px',
-    overflowY: 'auto',
-  },
-  contents: {
-
-  },
-  navItem: {
-    padding: '12px 24px',
-    link: {
-      textDecoration: 'none',
-      color: '#515253',
-      letterSpacing: '.025em',
-      fontWeight: 'normal',
-      wordWrap: 'break-word',
-    },
-  },
-  ul: {
-    marginTop: '0px',
-    marginBottom: 0,
-    paddingLeft: 0,
-    listStyle: 'none',
-  },
-  li: {
-    fontSize: '14px',
-  },
-};
+import './aside.css';
 
 const Item = ({ item }) => (
-  <li style={Styles.li}>
-    <div style={Styles.navItem}>
-      <Link to={item.link} style={Styles.navItem.link}>{item.title}</Link>
+  <li>
+    <div className="aside-nav-item">
+      <Link to={item.link} className="aside-nav-item-link">{item.title}</Link>
       {item.hasSubsections && item.items && item.items.length > 0 &&
         item.items.map(option => <Item item={option} key={option.key} />)}
     </div>
@@ -47,13 +14,18 @@ const Item = ({ item }) => (
 );
 
 Item.propTypes = {
-  item: PropTypes.object.isRequired,
+  item: PropTypes.shape({
+    key: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    hasSubsections: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 const Aside = ({ options }) => (
-  <aside style={Styles.aside}>
-    <nav style={Styles.contents}>
-      <ul style={Styles.ul}>
+  <aside className="aside">
+    <nav>
+      <ul>
         {options && options.map(option => <Item item={option} key={option.key} />)}
       </ul>
     </nav>
