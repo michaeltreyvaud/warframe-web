@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Panel from '../../../../Common/Panel';
+import Form from '../../../../Common/Form';
 
 const Styles = {
-  form: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-  },
   input: {
     fontSize: '14px',
     lineHeight: '1.52857',
@@ -45,14 +41,14 @@ class Signup extends Component {
   render() {
     return (
       <Panel title="Warframe Account Registration" >
-        <form style={Styles.form} onSubmit={this.onSubmit}>
+        <Form onSubmit={this.onSubmit}>
           <input style={Styles.input} type="email" name="email" placeholder="Email" autoComplete="email" onChange={this.onChange} />
           <input style={Styles.input} type="text" name="firstName" placeholder="First Name" autoComplete="given-name" onChange={this.onChange} />
           <input style={Styles.input} type="text" name="secondName" placeholder="Surname" autoComplete="family-name" onChange={this.onChange} />
           <input style={Styles.input} type="password" name="password" placeholder="Password" autoComplete="password" onChange={this.onChange} />
           <input style={Styles.input} type="password" name="confirmPassword" placeholder="Confirm Password" autoComplete="new-password" onChange={this.onChange} />
           <input style={Styles.input} type="submit" value="Signup" />
-        </form>
+        </Form>
       </Panel>
     );
   }

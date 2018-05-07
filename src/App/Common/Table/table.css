@@ -1,0 +1,40 @@
+.table {
+  margin-bottom: 0;
+  border: 0;
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: #656565;
+}
+
+.table thead {
+  color: #656565;
+  line-height: 1.52857;
+  direction: ltr;
+  border-collapse: collapse;
+}
+
+.table th {
+  border-top: 0;
+  padding: 14px 8px;
+  color: #888;
+  border-bottom-width: 1px;
+  vertical-align: bottom;
+  border-bottom: 2px solid #eee;
+  line-height: 1.52857;
+  text-align: left;
+}
+
+.table tr {
+  display: table-row;
+  border-collapse: collapse;
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 8px;
+  line-height: 1.52857;
+  border-top: 1px solid #eee;
+}

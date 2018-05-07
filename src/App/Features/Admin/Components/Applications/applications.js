@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Panel from '../../../../Common/Panel';
+import Form from '../../../../Common/Form';
 
 const Styles = {
-  form: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-  },
   input: {
     fontSize: '14px',
     lineHeight: '1.52857',
@@ -50,10 +46,10 @@ class Applications extends Component {
   render() {
     return (
       <Panel title="Create Application" >
-        <form style={Styles.form} onSubmit={this.onSubmit}>
+        <Form onSubmit={this.onSubmit}>
           <input style={Styles.input} type="text" name="applicationName" placeholder="Application Name" autoComplete="off" onChange={this.onChange} />
           <input style={Styles.createButton} type="submit" value="Create" />
-        </form>
+        </Form>
       </Panel>
     );
   }
