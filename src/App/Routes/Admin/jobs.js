@@ -27,4 +27,5 @@ const Routing = () => (
     <Route exact path="/admin/jobs/create" component={CreateJobRoute} />
   </Switch>
 );
+
 export default Routing;

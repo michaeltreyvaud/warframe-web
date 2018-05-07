@@ -30,7 +30,7 @@ const fail = () => ({
 
 export const create = body => (dispatch) => {
   dispatch(attempt());
-  const url = `${process.env.REACT_APP_ROOT_URL}${process.env.REACT_APP_CREAT_CATEGORIES_LINK}`;
+  const url = `${process.env.REACT_APP_ROOT_URL}${process.env.REACT_APP_CREATE_CATEGORIES_LINK}`;
   const options = {
     method: 'POST',
     headers: {

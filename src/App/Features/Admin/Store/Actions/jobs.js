@@ -34,7 +34,7 @@ const createFail = () => ({
 
 export const create = body => (dispatch) => {
   dispatch(createAttempt());
-  const url = `${process.env.REACT_APP_ROOT_URL}${process.env.REACT_APP_CREAT_JOBS_LINK}`;
+  const url = `${process.env.REACT_APP_ROOT_URL}${process.env.REACT_APP_CREATE_JOBS_LINK}`;
   const options = {
     method: 'POST',
     headers: {

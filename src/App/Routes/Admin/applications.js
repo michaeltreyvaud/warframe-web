@@ -1,5 +1,7 @@
 import React from 'react';
-import Applications from '../../Features/Admin/Components/Applications';
+import { Switch, Route } from 'react-router-dom';
+import Index from '../../Features/Admin/Components/Applications/Index';
+import CreateApplication from '../../Features/Admin/Components/Applications/Create';
 
 const Styles = {
   content: {
@@ -7,10 +9,23 @@ const Styles = {
   },
 };
 
-const ApplicationsRoute = () => (
+const IndexRoute = () => (
   <section style={Styles.content}>
-    <Applications />
+    <Index />
   </section>
 );
 
-export default ApplicationsRoute;
+const CreateAppRoute = () => (
+  <section style={Styles.content}>
+    <CreateApplication />
+  </section>
+);
+
+const Routing = () => (
+  <Switch>
+    <Route exact path="/admin/applications" component={IndexRoute} />
+    <Route exact path="/admin/applications/create" component={CreateAppRoute} />
+  </Switch>
+);
+
+export default Routing;

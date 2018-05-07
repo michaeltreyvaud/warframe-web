@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import Applications from './applications';
+import Create from './create';
 import {
   create,
   setValue,
-} from '../../Store/Actions/applications';
-import { getCreateApplicationName } from '../../Store/Selectors/';
+} from '../../../Store/Actions/applications';
+import { getCreateApplicationName } from '../../../Store/Selectors/';
 
 const mapStateToProps = state => ({
   applicationName: getCreateApplicationName(state),
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
   create: body => dispatch(create(body)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Applications);
+export default connect(mapStateToProps, mapDispatchToProps)(Create);

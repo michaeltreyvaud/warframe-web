@@ -31,8 +31,14 @@ const asideOptions = [{
   items: [{
     key: 'AdministrationChild1',
     title: 'Applications',
-    hasSubsections: false,
+    hasSubsections: true,
     link: '/admin/applications',
+    items: [{
+      key: 'JobsChild1',
+      title: 'Create',
+      hasSubsections: false,
+      link: '/admin/applications/create',
+    }],
   }, {
     key: 'AdministrationChild2',
     title: 'Jobs',
@@ -69,6 +75,7 @@ const AppRouter = () => (
         <Route exact path="/admin/jobs" component={Jobs} />
         <Route exact path="/admin/jobs/create" component={Jobs} />
         <Route exact path="/admin/applications" component={Applications} />
+        <Route exact path="/admin/applications/create" component={Applications} />
         <Route exact path="/admin/categories" component={Categories} />
         <Route default component={NoMatch} />
       </Switch>

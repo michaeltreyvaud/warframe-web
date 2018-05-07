@@ -2,20 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Panel from '../../../../Common/Panel';
 import Form from '../../../../Common/Form';
-
-const Styles = {
-  input: {
-    fontSize: '14px',
-    lineHeight: '1.52857',
-    color: '#3a3f51',
-    backgroundColor: '#fff',
-    backgroundImage: 'none',
-    border: '1px solid #dde6e9',
-    borderRadius: '4px',
-    marginBottom: '10px',
-    padding: '6px 16px',
-  },
-};
+import Input from '../../../../Common/Input';
 
 class Signup extends Component {
   constructor(props) {
@@ -42,12 +29,12 @@ class Signup extends Component {
     return (
       <Panel title="Warframe Account Registration" >
         <Form onSubmit={this.onSubmit}>
-          <input style={Styles.input} type="email" name="email" placeholder="Email" autoComplete="email" onChange={this.onChange} />
-          <input style={Styles.input} type="text" name="firstName" placeholder="First Name" autoComplete="given-name" onChange={this.onChange} />
-          <input style={Styles.input} type="text" name="secondName" placeholder="Surname" autoComplete="family-name" onChange={this.onChange} />
-          <input style={Styles.input} type="password" name="password" placeholder="Password" autoComplete="password" onChange={this.onChange} />
-          <input style={Styles.input} type="password" name="confirmPassword" placeholder="Confirm Password" autoComplete="new-password" onChange={this.onChange} />
-          <input style={Styles.input} type="submit" value="Signup" />
+          <Input type="email" name="email" placeholder="Email" autoComplete="email" onChange={this.onChange} />
+          <Input type="text" name="firstName" placeholder="First Name" autoComplete="given-name" onChange={this.onChange} />
+          <Input type="text" name="secondName" placeholder="Surname" autoComplete="family-name" onChange={this.onChange} />
+          <Input type="password" name="password" placeholder="Password" autoComplete="password" onChange={this.onChange} />
+          <Input type="password" name="confirmPassword" placeholder="Confirm Password" autoComplete="new-password" onChange={this.onChange} />
+          <input type="submit" value="Signup" />
         </Form>
       </Panel>
     );

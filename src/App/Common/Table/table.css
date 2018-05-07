@@ -22,14 +22,16 @@
   color: #888;
   border-bottom-width: 1px;
   vertical-align: bottom;
-  border-bottom: 2px solid #eee;
-  line-height: 1.52857;
   text-align: left;
 }
 
 .table tr {
   display: table-row;
   border-collapse: collapse;
+}
+
+.table tr:hover {
+  background-color: #fafbfc;
 }
 
 .table td {
