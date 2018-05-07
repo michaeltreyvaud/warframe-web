@@ -1,0 +1,15 @@
+.btn-form-submit {
+  border-radius: 3px;
+  font-size: 14px;
+  border-color: transparent;
+  outline: none;
+  color: #fff;
+  padding: 5px;
+  background-color: #5d9cec;
+  width: 120px;
+  align-self: flex-end;
+}
+
+.btn-form-submit:hover {
+  background-color: #4b91ea;
+}

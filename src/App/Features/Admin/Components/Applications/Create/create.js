@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Panel from '../../../../../Common/Panel';
 import Form from '../../../../../Common/Form';
 import Input from '../../../../../Common/Input';
+import FormSubmit from '../../../../../Common/Buttons';
 
 class Applications extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class Applications extends Component {
       <Panel>
         <Form onSubmit={this.onSubmit}>
           <Input type="text" name="applicationName" placeholder="Application Name" autoComplete="off" onChange={this.onChange} />
-          <button type="submit">Create</button>
+          <FormSubmit title="Create" />
         </Form>
       </Panel>
     );
