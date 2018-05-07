@@ -24,7 +24,7 @@ class Categories extends Component {
   }
   render() {
     return (
-      <Panel title="Create Category" >
+      <Panel>
         <Form onSubmit={this.onSubmit}>
           <Input type="text" name="title" placeholder="Title" autoComplete="off" onChange={this.onChange} />
           <Input type="text" name="description" placeholder="Description" autoComplete="off" onChange={this.onChange} />

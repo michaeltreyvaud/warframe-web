@@ -2,23 +2,21 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Index from '../../Features/Admin/Components/Applications/Index';
 import CreateApplication from '../../Features/Admin/Components/Applications/Create';
-
-const Styles = {
-  content: {
-    width: '100%',
-  },
-};
+import Header from '../../Common/Header';
+import Page from '../../Common/Page';
 
 const IndexRoute = () => (
-  <section style={Styles.content}>
+  <Page>
+    <Header title="Applications" />
     <Index />
-  </section>
+  </Page>
 );
 
 const CreateAppRoute = () => (
-  <section style={Styles.content}>
+  <Page>
+    <Header title="Create Application" />
     <CreateApplication />
-  </section>
+  </Page>
 );
 
 const Routing = () => (

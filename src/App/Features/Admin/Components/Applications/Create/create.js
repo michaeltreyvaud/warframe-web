@@ -23,7 +23,7 @@ class Applications extends Component {
   }
   render() {
     return (
-      <Panel title="Create Application" >
+      <Panel>
         <Form onSubmit={this.onSubmit}>
           <Input type="text" name="applicationName" placeholder="Application Name" autoComplete="off" onChange={this.onChange} />
           <button type="submit">Create</button>

@@ -2,23 +2,21 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Index from '../../Features/Admin/Components/Categories/Index';
 import CreateCategory from '../../Features/Admin/Components/Categories/Create';
-
-const Styles = {
-  content: {
-    width: '100%',
-  },
-};
+import Header from '../../Common/Header';
+import Page from '../../Common/Page';
 
 const IndexRoute = () => (
-  <section style={Styles.content}>
+  <Page>
+    <Header title="Categories" />
     <Index />
-  </section>
+  </Page>
 );
 
 const CreateCategoryRoute = () => (
-  <section style={Styles.content}>
+  <Page>
+    <Header title="Create Category" />
     <CreateCategory />
-  </section>
+  </Page>
 );
 
 const Routing = () => (

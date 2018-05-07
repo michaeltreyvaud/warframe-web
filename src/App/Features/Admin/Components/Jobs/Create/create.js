@@ -23,7 +23,7 @@ class CreateJob extends Component {
   }
   render() {
     return (
-      <Panel title="Create Job" >
+      <Panel>
         <Form onSubmit={this.onSubmit}>
           <Input type="text" name="lineOfBusiness" placeholder="Line of Business" autoComplete="off" onChange={this.onChange} />
           <button type="submit">Create</button>

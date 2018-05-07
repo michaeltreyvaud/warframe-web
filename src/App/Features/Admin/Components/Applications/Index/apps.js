@@ -11,7 +11,7 @@ class Apps extends Component {
   render() {
     const { loading, apps } = this.props;
     return (
-      <Panel title="Current Jobs" >
+      <Panel>
         <Table rows={apps} loading={loading} />
       </Panel>
     );

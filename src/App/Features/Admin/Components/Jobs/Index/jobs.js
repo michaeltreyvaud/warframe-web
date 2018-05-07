@@ -11,7 +11,7 @@ class Jobs extends Component {
   render() {
     const { loading, jobs } = this.props;
     return (
-      <Panel title="Current Jobs" >
+      <Panel>
         <Table rows={jobs} loading={loading} />
       </Panel>
     );

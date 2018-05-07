@@ -57,7 +57,7 @@ const asideOptions = [{
     link: '/pentests',
   }, {
     key: 'AdministrationChild4',
-    title: 'Findings Categories',
+    title: 'Categories',
     hasSubsections: true,
     link: '/admin/categories',
     items: [{

@@ -1,24 +1,22 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import IndexJob from '../../Features/Admin/Components/Jobs/Index';
+import Index from '../../Features/Admin/Components/Jobs/Index';
 import CreateJob from '../../Features/Admin/Components/Jobs/Create';
-
-const Styles = {
-  content: {
-    width: '100%',
-  },
-};
+import Header from '../../Common/Header';
+import Page from '../../Common/Page';
 
 const IndexRoute = () => (
-  <section style={Styles.content}>
-    <IndexJob />
-  </section>
+  <Page>
+    <Header title="Jobs" />
+    <Index />
+  </Page>
 );
 
 const CreateJobRoute = () => (
-  <section style={Styles.content}>
+  <Page>
+    <Header title="Create Job" />
     <CreateJob />
-  </section>
+  </Page>
 );
 
 const Routing = () => (

@@ -4,9 +4,10 @@ import './panel.css';
 
 const Panel = ({ title, children }) => (
   <div className="panel">
-    <div className="panel-heading">
-      <p>{title}</p>
-    </div>
+    {title &&
+      <div className="panel-heading">
+        <p>{title}</p>
+      </div>}
     <div className="panel-body">
       {children}
     </div>
@@ -14,7 +15,12 @@ const Panel = ({ title, children }) => (
 );
 
 Panel.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   children: PropTypes.any.isRequired,
 };
+
+Panel.defaultProps = {
+  title: null,
+};
+
 export default Panel;

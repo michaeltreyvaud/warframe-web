@@ -11,7 +11,7 @@ class Categories extends Component {
   render() {
     const { loading, categories } = this.props;
     return (
-      <Panel title="Current Categories" >
+      <Panel>
         <Table rows={categories} loading={loading} />
       </Panel>
     );
