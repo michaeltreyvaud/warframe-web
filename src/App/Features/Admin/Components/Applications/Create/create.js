@@ -26,7 +26,7 @@ class Applications extends Component {
       <Panel title="Create Application" >
         <Form onSubmit={this.onSubmit}>
           <Input type="text" name="applicationName" placeholder="Application Name" autoComplete="off" onChange={this.onChange} />
-          <input type="submit" value="Create" />
+          <button type="submit">Create</button>
         </Form>
       </Panel>
     );

@@ -28,7 +28,7 @@ class Categories extends Component {
         <Form onSubmit={this.onSubmit}>
           <Input type="text" name="title" placeholder="Title" autoComplete="off" onChange={this.onChange} />
           <Input type="text" name="description" placeholder="Description" autoComplete="off" onChange={this.onChange} />
-          <input type="submit" value="Create" />
+          <button type="submit">Create</button>
         </Form>
       </Panel>
     );

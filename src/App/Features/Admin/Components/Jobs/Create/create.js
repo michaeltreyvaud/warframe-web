@@ -26,7 +26,7 @@ class CreateJob extends Component {
       <Panel title="Create Job" >
         <Form onSubmit={this.onSubmit}>
           <Input type="text" name="lineOfBusiness" placeholder="Line of Business" autoComplete="off" onChange={this.onChange} />
-          <input type="submit" value="Create" />
+          <button type="submit">Create</button>
         </Form>
       </Panel>
     );

@@ -34,7 +34,7 @@ class Signup extends Component {
           <Input type="text" name="secondName" placeholder="Surname" autoComplete="family-name" onChange={this.onChange} />
           <Input type="password" name="password" placeholder="Password" autoComplete="password" onChange={this.onChange} />
           <Input type="password" name="confirmPassword" placeholder="Confirm Password" autoComplete="new-password" onChange={this.onChange} />
-          <input type="submit" value="Signup" />
+          <button type="submit">Signup</button>
         </Form>
       </Panel>
     );

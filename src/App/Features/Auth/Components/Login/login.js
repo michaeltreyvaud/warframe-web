@@ -36,7 +36,7 @@ class Login extends Component {
         <Form onSubmit={this.onSubmit}>
           <Input type="email" name="username" placeholder="Username" autoComplete="email" onChange={this.onChange} />
           <Input type="password" name="password" placeholder="Password" autoComplete="password" onChange={this.onChange} />
-          <input type="submit" value="Login" />
+          <button type="submit">Login</button>
         </Form>
         <div>
           <p>Dont have an account?</p>
