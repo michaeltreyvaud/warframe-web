@@ -13,7 +13,7 @@ const Table = ({ headers, rows }) => (
       {rows && rows.map(item => (
         <tr key={item.id} >
           <td >{item.id}</td>
-          <td >{item.lineOfBusiness}</td>
+          <td >{item.lineOfBusiness || item.applicationName}</td>
         </tr>))}
     </tbody>
   </table>
