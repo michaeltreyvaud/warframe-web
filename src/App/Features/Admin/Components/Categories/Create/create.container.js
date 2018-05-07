@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import Categories from './categories';
+import Create from './create';
 import {
   create,
   setValue,
-} from '../../Store/Actions/categories';
-import { getCreateCategoryTitle, getCreateCategoryDescription } from '../../Store/Selectors/';
+} from '../../../Store/Actions/categories';
+import { getCreateCategoryTitle, getCreateCategoryDescription } from '../../../Store/Selectors/';
 
 const mapStateToProps = state => ({
   title: getCreateCategoryTitle(state),
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
   create: body => dispatch(create(body)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Categories);
+export default connect(mapStateToProps, mapDispatchToProps)(Create);

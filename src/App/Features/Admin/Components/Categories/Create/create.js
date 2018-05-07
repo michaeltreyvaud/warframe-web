@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Panel from '../../../../Common/Panel';
-import Form from '../../../../Common/Form';
-import Input from '../../../../Common/Input';
+import Panel from '../../../../../Common/Panel';
+import Form from '../../../../../Common/Form';
+import Input from '../../../../../Common/Input';
 
 class Categories extends Component {
   constructor(props) {

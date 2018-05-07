@@ -23,6 +23,10 @@ import {
   CREATE_CATEGORIES_SUCCESS,
   CREATE_CATEGORIES_FAIL,
   CREATE_CATEGORIES_SET_VALUE,
+
+  GET_CATEGORIES_ATTEMPT,
+  GET_CATEGORIES_SUCCESS,
+  GET_CATEGORIES_FAIL,
 } from '../ActionTypes/categories';
 import jobsReducer, { jobsInitialState } from './jobs';
 import applicationsReducer, { applicationsInitialState } from './applications';
@@ -139,6 +143,24 @@ const adminReducer = (state = initialState, action) => {
       };
     }
     case CREATE_CATEGORIES_SET_VALUE: {
+      return {
+        ...state,
+        categories: categoriesReducer(state.categories, action),
+      };
+    }
+    case GET_CATEGORIES_ATTEMPT: {
+      return {
+        ...state,
+        categories: categoriesReducer(state.categories, action),
+      };
+    }
+    case GET_CATEGORIES_SUCCESS: {
+      return {
+        ...state,
+        categories: categoriesReducer(state.categories, action),
+      };
+    }
+    case GET_CATEGORIES_FAIL: {
       return {
         ...state,
         categories: categoriesReducer(state.categories, action),

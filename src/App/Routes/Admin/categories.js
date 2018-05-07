@@ -1,5 +1,7 @@
 import React from 'react';
-import Categories from '../../Features/Admin/Components/Categories';
+import { Switch, Route } from 'react-router-dom';
+import Index from '../../Features/Admin/Components/Categories/Index';
+import CreateCategory from '../../Features/Admin/Components/Categories/Create';
 
 const Styles = {
   content: {
@@ -7,10 +9,23 @@ const Styles = {
   },
 };
 
-const CategoriesRoute = () => (
+const IndexRoute = () => (
   <section style={Styles.content}>
-    <Categories />
+    <Index />
   </section>
 );
 
-export default CategoriesRoute;
+const CreateCategoryRoute = () => (
+  <section style={Styles.content}>
+    <CreateCategory />
+  </section>
+);
+
+const Routing = () => (
+  <Switch>
+    <Route exact path="/admin/categories" component={IndexRoute} />
+    <Route exact path="/admin/categories/create" component={CreateCategoryRoute} />
+  </Switch>
+);
+
+export default Routing;
