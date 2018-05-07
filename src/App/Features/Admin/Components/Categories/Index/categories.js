@@ -9,16 +9,17 @@ class Categories extends Component {
     this.props.getCategories();
   }
   render() {
-    const { categories } = this.props;
+    const { loading, categories } = this.props;
     return (
       <Panel title="Current Categories" >
-        <Table headers={['Id', 'Title']} rows={categories} />
+        <Table headers={['Id', 'Title']} rows={categories} loading={loading} />
       </Panel>
     );
   }
 }
 
 Categories.propTypes = {
+  loading: PropTypes.bool.isRequired,
   categories: PropTypes.array.isRequired,
   getCategories: PropTypes.func.isRequired,
 };

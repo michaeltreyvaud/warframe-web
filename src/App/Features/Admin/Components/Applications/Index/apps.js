@@ -9,16 +9,17 @@ class Apps extends Component {
     this.props.getApps();
   }
   render() {
-    const { apps } = this.props;
+    const { loading, apps } = this.props;
     return (
       <Panel title="Current Jobs" >
-        <Table headers={['Id', 'Application Name']} rows={apps} />
+        <Table headers={['Id', 'Application Name']} rows={apps} loading={loading} />
       </Panel>
     );
   }
 }
 
 Apps.propTypes = {
+  loading: PropTypes.bool.isRequired,
   apps: PropTypes.array.isRequired,
   getApps: PropTypes.func.isRequired,
 };

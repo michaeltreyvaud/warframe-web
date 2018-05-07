@@ -40,3 +40,11 @@
   line-height: 1.52857;
   border-top: 1px solid #eee;
 }
+
+.table-loading {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}

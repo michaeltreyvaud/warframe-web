@@ -9,16 +9,17 @@ class Jobs extends Component {
     this.props.getJobs();
   }
   render() {
-    const { jobs } = this.props;
+    const { loading, jobs } = this.props;
     return (
       <Panel title="Current Jobs" >
-        <Table headers={['Id', 'Line of Business']} rows={jobs} />
+        <Table headers={['Id', 'Line of Business']} rows={jobs} loading={loading} />
       </Panel>
     );
   }
 }
 
 Jobs.propTypes = {
+  loading: PropTypes.bool.isRequired,
   jobs: PropTypes.array.isRequired,
   getJobs: PropTypes.func.isRequired,
 };
