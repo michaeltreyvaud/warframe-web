@@ -13,6 +13,10 @@ import {
   CREATE_APPLICATION_SUCCESS,
   CREATE_APPLICATION_FAIL,
   CREATE_APPLICATION_SET_VALUE,
+
+  GET_APPLICATION_ATTEMPT,
+  GET_APPLICATION_SUCCESS,
+  GET_APPLICATION_FAIL,
 } from '../ActionTypes/applications';
 import {
   CREATE_CATEGORIES_ATTEMPT,
@@ -93,6 +97,24 @@ const adminReducer = (state = initialState, action) => {
       };
     }
     case CREATE_APPLICATION_SET_VALUE: {
+      return {
+        ...state,
+        applications: applicationsReducer(state.applications, action),
+      };
+    }
+    case GET_APPLICATION_ATTEMPT: {
+      return {
+        ...state,
+        applications: applicationsReducer(state.applications, action),
+      };
+    }
+    case GET_APPLICATION_SUCCESS: {
+      return {
+        ...state,
+        applications: applicationsReducer(state.applications, action),
+      };
+    }
+    case GET_APPLICATION_FAIL: {
       return {
         ...state,
         applications: applicationsReducer(state.applications, action),
