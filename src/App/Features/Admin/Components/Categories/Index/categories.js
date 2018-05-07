@@ -12,7 +12,7 @@ class Categories extends Component {
     const { loading, categories } = this.props;
     return (
       <Panel title="Current Categories" >
-        <Table headers={['Id', 'Title']} rows={categories} loading={loading} />
+        <Table rows={categories} loading={loading} />
       </Panel>
     );
   }

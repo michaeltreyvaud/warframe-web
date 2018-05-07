@@ -12,7 +12,7 @@ class Jobs extends Component {
     const { loading, jobs } = this.props;
     return (
       <Panel title="Current Jobs" >
-        <Table headers={['Id', 'Line of Business']} rows={jobs} loading={loading} />
+        <Table rows={jobs} loading={loading} />
       </Panel>
     );
   }

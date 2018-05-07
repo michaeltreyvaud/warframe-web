@@ -12,7 +12,7 @@ class Apps extends Component {
     const { loading, apps } = this.props;
     return (
       <Panel title="Current Jobs" >
-        <Table headers={['Id', 'Application Name']} rows={apps} loading={loading} />
+        <Table rows={apps} loading={loading} />
       </Panel>
     );
   }

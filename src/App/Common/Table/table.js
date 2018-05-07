@@ -13,21 +13,24 @@ const LoadingContainer = () => (
   </div>
 );
 
-const Table = ({ headers, rows, loading }) => {
+const Table = ({ rows, loading }) => {
   if (loading) return <LoadingContainer />;
   return (
     <table className="table">
       <thead>
         <tr>
-          {headers && headers.map(header => <th>{header}</th>)}
+          {rows && rows[0] && Object.keys(rows[0]).map(key => (<th>{key}</th>))}
         </tr>
       </thead>
       <tbody>
-        {rows && rows.map(item => (
-          <tr key={item.id} >
-            <td >{item.id}</td>
-            <td >{item.lineOfBusiness || item.applicationName || item.title}</td>
-          </tr>))}
+        {rows && rows.map((item) => {
+          const tds = Object.keys(item).map(key => (<td >{item[key]}</td>));
+          return (
+            <tr key={item.id} >
+              {tds}
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
@@ -35,7 +38,6 @@ const Table = ({ headers, rows, loading }) => {
 
 Table.propTypes = {
   loading: PropTypes.bool.isRequired,
-  headers: PropTypes.array.isRequired,
   rows: PropTypes.array.isRequired,
 };
 
